@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Home.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <header> 
+        <div class="container">
+          <div class="header">
+            <img src="img/logo.png" width="300" height="250" alt="">
+            <div>
+               <a href="Home.html">Home</a>
+               <a href="index.html">Главный</a>
+            </div>
+            <div>
+                <button onclick="showModal('registerModal')" class="bg-blue-500 text-white px-4 py-2 rounded mx-1">Регистрация</button>
+                <button onclick="showModal('loginModal')" class="bg-blue-500 text-white px-4 py-2 rounded mx-1">Вход</button>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <!-- Registration Modal -->
+    <div id="registerModal" class="modal hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
+        <div class="modal-content bg-white w-96 p-6 rounded shadow-md">
+            <h2 class="text-2xl font-bold mb-4">Регистрация</h2>
+            <form onsubmit="fakeRegister(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" id="registerEmail" class="w-full p-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Пароль</label>
+                    <input type="password" id="registerPassword" class="w-full p-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Номер телефона</label>
+                    <input type="tel" id="registerPhone" class="w-full p-2 border rounded" required>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Регистрация</button>
+                <p class="mt-4">
+                    <a href="#" onclick="hideModal('registerModal')" class="text-blue-500 hover:text-blue-700">Закрыть</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
+        <div class="modal-content bg-white w-96 p-6 rounded shadow-md">
+            <h2 class="text-2xl font-bold mb-4">Вход</h2>
+            <form onsubmit="fakeLogin(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" id="loginEmail" class="w-full p-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Пароль</label>
+                    <input type="password" id="loginPassword" class="w-full p-2 border rounded" required>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Вход</button>
+                <p class="mt-4">
+                    <a href="#" onclick="hideModal('loginModal')" class="text-blue-500 hover:text-blue-700">Закрыть</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <main>
+            <section class="welcome">
+                <h2>Добро пожаловать на наш информационный портал!</h2>
+                <p>Здесь вы можете узнать стоимость вашей недвижимости с помощью нашего удобного онлайн-калькулятора. Мы предоставляем всю необходимую информацию об оценке недвижимости и инструменты, которые помогут вам сделать это быстро и точно.</p>
+            </section>
+            <section class="calculator">
+                <h2>Наш онлайн-калькулятор оценки недвижимости</h2>
+                <p>Наш калькулятор позволяет вам получить приблизительную оценку стоимости вашей недвижимости всего за несколько минут. Просто введите необходимые данные, и наш инструмент проведет расчет на основе актуальных рыночных данных.</p>
+                <a href='index.html'>Перейти к калькулятору</a>
+            </section>
+            <section class="how-it-works">
+                <h2>Как работает наш калькулятор?</h2>
+                <ol>
+                    <li>Введите данные: укажите тип недвижимости, её площадь, расположение и другие ключевые параметры.</li>
+                    <li>Рассчет стоимости: калькулятор анализирует введенные данные и использует современные алгоритмы для расчета стоимости.</li>
+                    <li>Получите результат: вы получите предварительную оценку стоимости вашей недвижимости сразу после ввода данных.</li>
+                </ol>
+            </section>
+            <section class="advantages">
+                <h2>Преимущества нашего калькулятора</h2>
+                <ul>
+                    <li>Быстро и удобно: оцените недвижимость, не выходя из дома.</li>
+                    <li>Точность: используем актуальные рыночные данные для максимально точной оценки.</li>
+                    <li>Бесплатно: все расчеты доступны бесплатно и без регистрации.</li>
+                </ul>
+            </section>
+            <section class="useful-info">
+                <h2>Полезная информация об оценке недвижимости</h2>
+                <ul>
+                    <li>Статьи и гайды: подробные материалы о различных аспектах оценки недвижимости.</li>
+                    <li>Советы экспертов: профессиональные рекомендации по увеличению стоимости вашего имущества.</li>
+                    <li>Форум и консультации: возможность задать вопросы экспертам и получить профессиональные ответы.</li>
+                </ul>
+            </section>
+            <section class="importance">
+                <h2>Почему важна оценка недвижимости?</h2>
+                <ul>
+                    <li>Покупка или продажа: определите справедливую цену для вашей сделки.</li>
+                    <li>Ипотека и кредиты: установите стоимость для залога.</li>
+                    <li>Страхование: рассчитайте страховую сумму для вашего имущества.</li>
+                    <li>Юридические вопросы: урегулируйте наследственные споры и раздел имущества.</li>
+                    <li>Инвестиции: проанализируйте рентабельность вложений в недвижимость.</li>
+                </ul>
+            </section>
+        </main>
+        </div>
+            
+    <footer class="text-center bg-gray-200 py-4">
+        <p>&copy; 2024 Оценка недвижимости онлайн</p>
+    </footer>
+
+    <script>
+        function showModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+        }
+
+        function hideModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('hidden');
+        }
+
+        function fakeRegister(event) {
+            event.preventDefault();
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const phone = document.getElementById('registerPhone').value;
+            console.log('Регистрация', { email, password, phone });
+            alert('Регистрация успешна!');
+            hideModal('registerModal');
+        }
+
+        function fakeLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            console.log('Вход', { email, password });
+            alert('Вход успешен!');
+            hideModal('loginModal');
+        }
+    </script>
+</body>
+</html>

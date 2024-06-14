@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+<!--  -->
+</head>
+<body>
+    <header> 
+        <div class="container">
+          <div class="header">
+            <img src="img/logo.png" width="200" height="100" alt="">
+            <div>
+               <a href="Home.html">Главный</a>
+               <a href="index.html">Оценка</a>
+            </div>
+           
+          </div>
+        </div>
+    </header>
+    <section id="hero">
+      <div class="container">
+        <div class="hero_img">
+          <img src="img/image.png" alt="" />
+          <div class="text">
+          <h1>Оценка</h1>
+            <p>Для точной оценки нам нужны данные про дом, квартиру и район. </p>
+              <div>
+          
+              
+              </div>
+            </div>
+        </div>
+      
+        <div class="hero_text"> 
+          <h4>Онлайн оценка стоимости квартиры </h4>
+          <b>Вы можете рассчитать онлайн стоимость квартиры на калькуляторе недвижимости. </b>
+          <hr style="width: 100%; height: 5px;  background: red; border: none; ">
+          <div id="result"> </div>
+          <div id="parameters" class="parameters">
+          
+          </div>
+          
+          <div id="question1" class="question active">
+            <h2>Почему вас заинтересовала оценка?</h2>
+            <div class="hehe">
+              <button class="card" onclick="storeAnswer('reason', 'Хочу продать квартиру')">
+                <span>Хочу продать квартиру</span>
+                <img  src="./img/dollar.png"
+                  alt="Продать"
+                />
+              </button>
+              <button class="card" onclick="storeAnswer('reason', 'Купить')">
+                <span>Купить</span>
+                <img
+                  src="https://cdn.cian.site/frontend/lead-realtor-form-assets/buy.svg"
+                  alt="Купить"
+                />
+              </button>
+              <button
+                class="card"
+                onclick="storeAnswer('reason', 'Продать, чтобы купить')"
+              >
+                <span>Продать, чтобы купить</span>
+                <img
+                  src="https://cdn.cian.site/frontend/lead-realtor-form-assets/sell_to_buy.svg"
+                  alt="Продать, чтобы купить"
+                />
+              </button>
+              <button class="card" onclick="storeAnswer('reason', 'Сдать')">
+                <a href="indexTwo.html">
+                  <span>Сдать</span>
+                  <img src="https://cdn.cian.site/frontend/lead-realtor-form-assets/rent.svg" alt="Сдать" />
+                </a>
+              </button>
+              
+              <button class="card" onclick="storeAnswer('reason', 'Снять')">
+                <a href="indexTwo.html">
+                  <span>Снять</span>
+                  <img src="https://cdn.cian.site/frontend/lead-realtor-form-assets/tenant.svg" alt="Снять" />
+                </a>
+              </button>
+              
+              <button
+                class="card"
+                onclick="storeAnswer('reason', 'Просто интересно')"
+              >
+                <span>Просто интересно</span>
+                <img
+                  src="https://cdn.cian.site/frontend/lead-realtor-form-assets/interest.svg"
+                  alt="Просто интересно"
+                />
+              </button>
+            </div>
+            </div>
+            <div id="question2" class="question ">
+                <h2>Выберите город и район</h2>
+                <div class="hehe">
+                  <div class="bl" id="block1">
+                    <h2>Область:</h2>
+                    <select id="areaSelect">
+                      <option value="">Не выбрано</option>
+                      <option value="osh">Ош</option>
+                      <option value="chuy">Чүй</option>
+                      <option value="batken">Баткен</option>
+                      <option value="jalalabad">Жалал-Абад</option>
+                      <option value="naryn">Нарын</option>
+                      <option value="talas">Талас</option>
+                      <option value="issykkul">Ысык-Көл</option>
+                    </select>
+                  </div>
+                    <div class="bl" id="block2">
+                  <h2>Город:</h2>
+                  <select id="citySelect">
+                    <option value="">Не выбрано</option>
+                  </select>
+                </div>
+                <div class="bl" id="block3">
+                  <h2>Район:</h2>
+                  <select id="districtSelect">
+                    <option value="">Не выбрано</option>
+                  </select>
+                </div>
+                <div class="bl" id="block4">
+                <h2>Серия:</h2>
+            <select  id="serSelect">
+                <option value="room">не выбрано </option>
+                <option value="105">105 </option>
+                <option value="106"> 106</option>
+                <option value="104"> 104</option>
+                <option value="Хрущевки">Хрущевки </option>
+                <option value="Сталинки">Сталинки </option>
+                <option value="Индивидуальные проекты ">Индивидуальные проекты </option>
+                <option value="Другие типы жилых зданий">Другие типы жилых зданий</option>
+                <option value="Коттеджи">Коттеджи</option>
+                <option value="Апартаменты">Апартаменты</option>
+            </select>
+        </div>
+     
+                </div>
+                <button class="dal" onclick="nextQuestion()">Дальше</button>
+              </div>
+           
+        <div id="question3" class="question">
+          <h2>Укажите тип дома <img src="./img/img.png" alt=""  ></h2>
+          <div class="hehe">
+            <button
+              class="card"
+              onclick="storeAnswer('houseType', 'Кирпичный')"
+            >
+              <span>Кирпичный</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/brick.png"
+              />
+            </button>
+            <button
+              class="card"
+              onclick="storeAnswer('houseType', 'Монолитный')"
+            >
+              <span>Монолитный</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/monolith.png"
+              />
+            </button>
+            <button class="card"onclick="storeAnswer('houseType', 'Панельный')"
+            >
+              <span>Панельный</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/panel.png"
+              />
+            </button>
+            <button class="card" onclick="storeAnswer('houseType', 'Блочный')">
+              <span>Блочный</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/block.png"
+              />
+            </button>
+            <button class="card"onclick="storeAnswer('houseType', 'Деревянный')"
+            >
+              <span>Деревянный</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/wood.png"
+              />
+            </button>
+            <button class="card" onclick="storeAnswer('houseType', 'Монолитно-кирпичный')"
+            >
+              <span>Монолитно-кирпичный</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/monolithBrick.png"
+              />
+            </button>
+            <button class="card" onclick="storeAnswer('houseType', 'Сталинский')"
+            >
+              <span>Сталинский</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/stalin.png"
+              />
+            </button>
+          </div>
+        </div>
+      
+
+        <div id="question4" class="question">
+          <h2>Год постройки дома</h2>
+        
+           
+            <input class="numer" type="number" id="constructionYear" name="constructionYear" min="1970" max="2024" required /> <br />
+            <button class="dal" onclick="storeInputAnswer('constructionYear')">
+              Дальше
+            </button>
+          </div>
+
+          <div id="question5" class="question">
+            <h2>Сколько этажей в доме? <img src="./img/etaj.png" alt=""  ></h2>
+            
+            <input class="numer"  type="number" id="floorsInHouse" required/> <br />
+            <button class="dal" onclick="storeInputAnswer('floorsInHouse')">
+              Дальше
+            </button>
+          </div>
+
+          <div id="question6" class="question">
+            <h2>На каком этаже расположена квартира?</h2>
+           
+            <input class="numer"  type="number" id="apartmentFloor" required/> <br />
+            <button class="dal" onclick="storeInputAnswer('apartmentFloor')">
+              Дальше
+            </button>
+          </div>
+
+          <div id="question7" class="question">
+            <h2>Укажите высоту потолков</h2>
+            <div class="hehe">
+            <button class="card"onclick="storeAnswer('housPot', 'less_2_5')"
+            >
+              <span>Менее 2,5 м</span>
+              <img
+                src="https://avatars.mds.yandex.net/i?id=09f9347994412c6ad89b35d7efbe866ac49cafab-10641531-images-thumbs&n=13g"
+              />
+            </button>
+            <button class="card"onclick="storeAnswer('housPot', '2_5_to_2_8')"
+            >
+              <span>От 2,50 м до 2,80</span>
+              <img
+                src="https://avatars.mds.yandex.net/i?id=09f9347994412c6ad89b35d7efbe866ac49cafab-10641531-images-thumbs&n=13gg"
+              />
+            </button>
+            <button class="card"onclick="storeAnswer('housPot', '2_8_to_3_4')"
+            >
+              <span>От 2,80 м до 3,40 м</span>
+              <img
+                src="https://avatars.mds.yandex.net/i?id=09f9347994412c6ad89b35d7efbe866ac49cafab-10641531-images-thumbs&n=13g"
+              />
+            </button>
+            <button class="card"onclick="storeAnswer('housPot', 'more_3_4')"
+            >
+              <span>Более 3,40 м</span>
+              <img
+                src="https://avatars.mds.yandex.net/i?id=09f9347994412c6ad89b35d7efbe866ac49cafab-10641531-images-thumbs&n=13g"
+              />
+            </button>
+           
+          </div>
+          </div>
+
+          <div id="question8" class="question">
+            <h2>Укажите количество комнат</h2>
+            <div class="hehe">
+            <button class="card"onclick="storeAnswer('housPage', '1')"
+            >
+              <span>1</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/panel.png"
+              />
+            </button>
+            <button class="card"onclick="storeAnswer('housPage', '2')"
+            >
+              <span>2</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/panel.png"
+              />
+            </button>
+            <button class="card"onclick="storeAnswer('housPage', '3')"
+            >
+              <span>3</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/panel.png"
+              />
+            </button>
+            <button class="card"onclick="storeAnswer('housPage', '4')"
+            >
+              <span>4</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/panel.png"
+              />
+            </button>
+            <button class="card"onclick="storeAnswer('housPage', '5')"
+            >
+              <span>5</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/house_material_type/panel.png"
+              />
+            </button></div>
+          </div>
+          <div id="question9" class="question">
+            <h2>Сколько квадратных метров?</h2>
+            <p>Пропустите вопрос, если затрудняетесь ответить</p>
+          <span>  <input  class="numer" type="number" id="squareMeters" /> <b> м²</b></span><br />
+            <button class="dal" onclick="storeInputAnswer('squareMeters')">
+              Дальше
+            </button>
+          </div>
+         
+          <div id="question10" class="question">
+          <h2>Есть лоджия или балкон?</h2>
+          <div class="hehe">
+            <button class="card" onclick="storeAnswer('balcony', 'Да')">
+              <span>Да</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/yes.svg"
+              />
+            </button>
+            <button class="card" onclick="storeAnswer('balcony', 'Нет')">
+              <span>Нет</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/no.svg"
+              />
+            </button>
+          </div>
+          </div>
+          <div id="question11" class="question">
+          <h2>Укажите тип санузла</h2>
+          <div class="hehe">
+            <button
+              class="card"
+              onclick="storeAnswer('bathroomType', 'Совмещенный')"
+            >
+              <span>Совмещенный</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/bathroom/combined.svg"
+              />
+            </button>
+            <button
+              class="card"
+              onclick="storeAnswer('bathroomType', 'Раздельный')"
+            >
+              <span>Раздельный</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/bathroom/separate.svg"
+              />
+            </button>
+          </div>
+          </div>
+          <div id="question12" class="question">
+          <h2>Какой тип ремонта?</h2>
+          <div class="hehe">
+            <button
+              class="card"
+              onclick="storeAnswer('repairType', 'Косметический')"
+            >
+              <span>Косметический</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/repair/cosmetic.png"
+              />
+            </button>
+            <button
+              class="card"
+              onclick="storeAnswer('repairType', 'Дизайнерский')"
+            >
+              <span>Дизайнерский</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/repair/design.png"
+              />
+            </button>
+            <button
+              class="card"
+              onclick="storeAnswer('repairType', 'Квартира без ремонта')"
+            >
+              <span>Квартира без ремонта</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/repair/without.png"
+              />
+            </button>
+            <button
+              class="card"
+              onclick="storeAnswer('repairType', 'Евро')"
+            >
+              <span>Евро</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/repair/euro.png"
+              />
+            </button>
+            <button class="card" onclick="storeAnswer('repairType', 'Не знаю')">
+              <span>Не знаю</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/do_not_know.png"
+              />
+            </button>
+          </div>
+          </div>
+          <div id="question13" class="question">
+          <h2>Укажите возраст ремонта</h2>
+          <div class="hehe">
+            <button
+              class="card"
+              onclick="storeAnswer('repairAge', 'Менее года')"
+            >
+              <span>Менее года</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/repair_age/lteOne.svg"
+              />
+            </button>
+            <button
+              class="card"
+              onclick="storeAnswer('repairAge', 'От года до 5 лет')"
+            >
+              <span>От года до 5 лет</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/repair_age/gteOneLteFive.svg"
+              />
+            </button>
+            <button
+              class="card"
+              onclick="storeAnswer('repairAge', 'От 5 лет до 10 лет')"
+            >
+              <span>От 5 лет до 10 лет</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/repair_age/gteFiveLteTen.svg"
+              />
+            </button>
+            <button
+              class="card"
+              onclick="storeAnswer('repairAge', 'Более 10 лет')"
+            >
+              <span>Более 10 лет</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/repair_age/gtTen.svg"
+              />
+            </button>
+            <button class="card" onclick="storeAnswer('repairAge', 'Не знаю')">
+              <span>Не знаю</span>
+              <img
+                src="https://cdn.cian.site/frontend/lead-realtor-form-assets/do_not_know.png"
+              />
+            </button>
+          </div>
+          </div>  
+          <div id="question14" class="question">
+            <h2>Централизованы ли все коммунальные системы?</h2>
+            <div class="hehe">
+              <div class="card">
+                <div class="in">
+                  <span>Теплоснабжение</span> <input type="checkbox" id="heating" />
+                </div>
+                <img src="./img/heating.png" />
+              </div>
+              <div class="card">
+                <div class="in">
+                  <span>Газоснабжение</span>
+                  <input type="checkbox" id="gas" />
+                </div>
+                <img src="./img/gas.png" />
+              </div>
+            
+              <div class="card">
+                <div class="in">
+                  <span>Холодное водоснабжение</span>
+                  <input type="checkbox" id="coldWater" />
+                </div>
+                <img src="./img/coldWater.png" />
+              </div>
+              <div class="card">
+                <div class="in">
+                  <span>Горячее водоснабжение</span>
+                  <input type="checkbox" id="hotWater" />
+                </div>
+                <img src="./img/hot.png" />
+              </div>
+              <div class="card">
+                <div class="in">
+                  <span>Водоотведение</span>
+                  <input type="checkbox" id="drainage" />
+                </div>
+                <img src="./img/drainage.png" />
+              </div>
+              <button
+                class="dal"
+                onclick="storeCheckboxAnswers(['heating','hotWater', 'gas',  'coldWater', 'drainage'])"
+              >
+                Дальше
+              </button>
+            </div>
+          </div>
+         <div id="question15" class="question">
+            <h2>Укажите инфраструктуру рядом с домом</h2>
+            <div class="hehe">
+              <div class="card">
+                <div class="in">
+                  <span>Школа</span> <input type="checkbox" id="school" />
+                </div>
+                <img
+                  src="https://cdn.cian.site/frontend/lead-realtor-form-assets/infrastructure/school.svg"
+                />
+              </div>
+              <div class="card">
+                <div class="in">
+                  <span>Детская площадка</span> <input type="checkbox" id="children" />
+                </div>
+                <img
+                  src="./img/Children.png "
+                />
+              </div>
+              <div class="card">
+                <div class="in">
+                  <span>Спортивная площадка</span> <input type="checkbox" id="sports" />
+                </div>
+                <img
+                  src="./img/Sports.png "
+                />
+              </div>
+              <div class="card">
+                <div class="in">
+                  <span>Детский сад</span>
+                  <input type="checkbox" id="kindergarten" />
+                </div>
+                <img
+                  src="https://cdn.cian.site/frontend/lead-realtor-form-assets/infrastructure/kindergarten.svg"
+                />
+              </div>
+              <div class="card">
+                <div class="in">
+                  <span>Поликлиника</span>
+                  <input type="checkbox" id="polyclinic" />
+                </div>
+                <img
+                  src="https://cdn.cian.site/frontend/lead-realtor-form-assets/infrastructure/polyclinic.svg"
+                />
+              </div>
+              <div class="card">
+                <div class="in">
+                  <span>Магазин</span> <input type="checkbox" id="shop" />
+                </div>
+                <img
+                  src="https://cdn.cian.site/frontend/lead-realtor-form-assets/infrastructure/shop.svg"
+                />
+              </div>
+              <button
+                class="dal"
+                onclick="storeCheckboxAnswers(['school','children','sports', 'kindergarten', 'polyclinic', 'shop'])"
+              >
+                Дальше
+              </button>
+            </div>
+          </div>
+          
+          <div id="calculationLink"></div>
+          <button id="resetButton" style="background: red;" class="reset-button" onclick="resetForm()">Очистить</button>
+         </div>     
+       
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Оценка недвижимости онлайн</p>
+  </footer>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </body>
+</html>
